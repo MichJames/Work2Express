@@ -34,7 +34,7 @@ app.use(function(err, req, res, next) {
 path = require('path')
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.get('/metrics', (req, res) => {
+app.get('/metrics.json', (req, res) => {
   metrics.get((err, data) => {
     if(err) throw err
     res.status(200).json(data)
