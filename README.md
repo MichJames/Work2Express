@@ -1,7 +1,6 @@
 
 
 # Work Node js
-=============
 
 ## Introduction
 This exercise has the objective of practice the node js usage in webpages. Even though is a very simple configuration, it uses modules imports and requires (imports and exports) and a clear link to html.
