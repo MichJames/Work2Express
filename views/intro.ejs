@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <% include partials/head %>
+  </head>
+  <body class="container">
+    <div class="row">
+      <div class="col">
+        <h2>How does this page works? </h2>
+        <p>This page has 3 posible arguments for the url</p>
+        <ul>
+        <li><h3>Default page</h3></li>
+        <p>Shows the explanation of the page (Present page)</p>
+        <li><h3>Hello functionality</h3></li>
+        <p>You can write "/hello/" into the URL of the website and a name and the web page will say hi to you or you can write "/hello/Team7" to know a little bit about the members of the team 7 or you can always just say "/hello" an enter anonymously</p>
+        <h3>Error</h3>
+        <p>In case you enter an invalid URL you will get a warning message :(</p>
+       </ul>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+<h1>Work Node js</h1>
+          <br></br>
+          <h2>How does this page works? </h2>
+           <p>This page has 3 posible arguments for the url</p>
+          <h3>Default page</h3>
+           <p>Shows the explanation of the page (Present page)</p>
+          <h3>Hello functionality</h3>
+           <p>You can write "/hello/name" into the URL of the website and a name and the web page will say hi to you or you can write "/hello/Team7" to know a little bit about the members of the team 7 or you can always just say "/hello" an enter anonymously</p>
+          <h3>Error</h3>
+
+
+
+<body class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <button class="btn btn-success mt-3" id="show-metrics">
+      Bring the metrics
+    </button>
+    <div id="metrics"></div>
+  </div>
+</body>
+<script>
+$('#show-metrics').click((e) => {
+  e.preventDefault();
+  $.getJSON("./metrics.js", {}, (data) => {
+    const content = data.map(d => {
+      return 'timestamp: '+d.timestamp+', value: '+d.value+'';
+    })
+    $('#metrics').append(content.join("\n"));
+  });
+})
+</script>

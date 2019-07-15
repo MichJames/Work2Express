@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include partials/head %>
+    </head>
+    <body>
+      <section class="container">
+        <div class= "row justify-content-center">
+          <div class = "col">
+       <h2>A little bit about us...</h2>
+     </div>
+   </div>
+  <section class="row mt-3">
+    <article class="col">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Mich:</h3>
+          <p class="card-text">
+            Hello! As you know my name is Mich. I am 22 years old, studying my last semester of Digital Systems and Robotics Engineering at Mexico City. I love music, basketball and traveling. I like to learn languages, right now I speak: English, Spanish, Gemran (a little), and French (also a little bit). Nice to meet you!
+          </p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="row mt-3">
+    <article class="col">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Emmanuel:</h3>
+          <p class="card-text">
+          Hello, my name is Emmanuel Zamudio. I am a student of Tecnológico de Monterrey Campus Estado de México. I am in the seventh semester of Engineering in Digital Systems and Robotics, and I am twenty-one years old. I am also a musician and I have been playing drums for eight years.
+          </p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+<body class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <button class="btn btn-success mt-3" id="show-metrics">
+      Bring the metrics
+    </button>
+    <div id="metrics"></div>
+  </div>
+</body>
+<script>
+$('#show-metrics').click((e) => {
+  e.preventDefault();
+  $.getJSON("./metrics.js", {}, (data) => {
+    const content = data.map(d => {
+      return 'timestamp: '+d.timestamp+', value: '+d.value+'';
+    })
+    $('#metrics').append(content.join("\n"));
+  });
+})
+</script>
