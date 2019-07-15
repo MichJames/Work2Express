@@ -16,7 +16,7 @@ git clone --depth 1 https://github.com/MichJames/Work2Express
 On the terminal:
 
 ```
-cd Work1node
+cd Work2Express
 node index.js
 ```
 Read the instructions of the page and have fun.
